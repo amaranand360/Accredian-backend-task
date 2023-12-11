@@ -7,7 +7,6 @@ export const register = async (req, res, next) => {
 
     try {
       const { name, email, password } = req.body;
-      console.log("jhbhvg")
       pool.query('SELECT * FROM users WHERE email = ?', [email], async (err, results) => {
         if (err) {
           return next(err);
